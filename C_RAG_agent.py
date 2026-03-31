@@ -10,8 +10,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-os.environ["GROQ_API_KEY"] = os.getenv("Groq_API")
-os.environ["TAVILY_API_KEY"] = os.getenv("Tavily_API")
+os.environ["GROQ_API_KEY"] = os.getenv("Groq_API") or "missing"
+os.environ["TAVILY_API_KEY"] = os.getenv("Tavily_API") or "missing"
 
 class AgentState(TypedDict):
     question: str
