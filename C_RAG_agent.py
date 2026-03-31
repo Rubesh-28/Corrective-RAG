@@ -83,12 +83,13 @@ workflow.add_edge("generate_node", END)
 
 app = workflow.compile()
 
-print("TEST 1: Local Knowledge")
-res1 = app.invoke({"question": "What is LangGraph?"})
-print("Result:", res1["answer"])
+if __name__ == "__main__":
+    print("TEST 1: Local Knowledge")
+    res1 = app.invoke({"question": "What is LangGraph?"})
+    print("Result:", res1["answer"])
 
-print("\n" + "="*30 + "\n")
+    print("\n" + "="*30 + "\n")
 
-print("TEST 2: Web Knowledge")
-res2 = app.invoke({"question": "What is the price of Gold today?"})
-print("Result:", res2["answer"])
+    print("TEST 2: Web Knowledge")
+    res2 = app.invoke({"question": "What is the price of Gold today?"})
+    print("Result:", res2["answer"])
